@@ -3,10 +3,9 @@ import 'dotenv/config';
 import { defineConfig, devices } from '@playwright/test';
 
 
-export const appUrls = {
-  baseURL: process.env.BASE_URL || 'http://192.168.11.25/RailERP-Staging/',
-  loginURL: process.env.LOGIN_URL || './',
-};
+import { appUrls } from './config.js';
+
+export { appUrls };
 
 // Run headed locally by default; set HEADLESS=true in .env (Jenkins does this) for CI agents
 const headless = process.env.HEADLESS === 'true';
