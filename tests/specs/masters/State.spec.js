@@ -1,8 +1,7 @@
 
 import { test } from '@playwright/test';
-import { appUrls } from '../../../playwright.config';
+import { appUrls, credentials } from '../../../config.js';
 import { PageManagers } from '../../../page-manager/Page-Manager.js';
-import loginData from '../../test-data-management/login/Login.json';
 import { StatePageTC } from '../../../testcases/state-tc/StateTc.js';
 
 test.describe('RailERP Login Automation', () => {
@@ -13,9 +12,7 @@ test.describe('RailERP Login Automation', () => {
     test.beforeEach(async ({ browser }) => {
 
         // Create browser context
-        context = await browser.newContext({
-            ignoreHTTPSErrors: true
-        });
+        context = await browser.newContext({ignoreHTTPSErrors: true});
 
         // Create new page
         page = await context.newPage();
@@ -36,9 +33,9 @@ test.describe('RailERP Login Automation', () => {
 
 
         await pm.loginPage.loginPage(
-            loginData.validLogin.username,
-            loginData.validLogin.password,
-            loginData.validLogin.checkbox
+            credentials.validLogin.username,
+            credentials.validLogin.password,
+            credentials.validLogin.checkbox
         );
 
         await stateTc.createStates();

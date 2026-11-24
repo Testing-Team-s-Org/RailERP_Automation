@@ -1,8 +1,7 @@
 
 import { test } from '@playwright/test';
-import { appUrls } from '../../../playwright.config';
+import { appUrls, credentials } from '../../../config.js';
 import { PageManagers } from '../../../page-manager/Page-Manager.js';
-import loginData from '../../test-data-management/login/Login.json';
 
 test.describe('RailERP Login Automation', () => {
 
@@ -34,9 +33,9 @@ test.describe('RailERP Login Automation', () => {
 
         // Valid Login
         await pm.loginPage.invalidLogin(
-            loginData.invalidLogin.username,
-            loginData.invalidLogin.password,
-            loginData.invalidLogin.checkbox
+            credentials.invalidLogin.username,
+            credentials.invalidLogin.password,
+            credentials.invalidLogin.checkbox
         );
 
     });
@@ -47,9 +46,9 @@ test.describe('RailERP Login Automation', () => {
 
 
         await pm.loginPage.loginPage(
-            loginData.validLogin.username,
-            loginData.validLogin.password,
-            loginData.validLogin.checkbox
+            credentials.validLogin.username,
+            credentials.validLogin.password,
+            credentials.validLogin.checkbox
         );
 
 

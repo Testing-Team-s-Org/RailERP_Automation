@@ -1,6 +1,6 @@
 
 import { PageManagers } from "../../page-manager/Page-Manager.js";
-import stateData from "../../tests/test-data-management/state/State.json";
+import { stateData } from "../../config.js";
 import { generateStateName, generateStateCode, createState } from "../../utils/Utils.js";
 
 export class StatePageTC {
