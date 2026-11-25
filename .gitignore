@@ -10,7 +10,6 @@ node_modules/
 # Ignore Playwright codegen folder
 /tests/codegen/
 # Environment (local values / written by Jenkins); .env.example is committed
-.env
 
 # Allure
 allure-results/
